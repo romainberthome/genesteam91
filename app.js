@@ -3,8 +3,16 @@ var express = require("express"),
     mongoose = require("mongoose"),
     bodyParser = require("body-parser");
     
-app.use("view engine", "ejs");
+app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended:true}));
+
+app.get("/", function(req, res){
+   res.render("login"); 
+});
+
+app.get("/home", function(req, res){
+    res.render("home");
+});
 
 app.listen(process.env.PORT, process.env.IP, function(){
     console.log("Server Started");
