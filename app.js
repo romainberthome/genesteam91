@@ -7,8 +7,30 @@ var express = require("express"),
     passportLocalMongoose = require("passport-local-mongoose"),
     methodOverride = require("method-override");
     
+var User = require("./models/user");
+    
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended:true}));
+app.use(require("express-session")({
+    secret:"Once qgin rusty is cute",
+    resave: false,
+    saveUninitialized: false
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(methodOverride("_method"));
+
+app.use(function(req, res, next){
+    res.locals.currentUser = req.user;
+    res.locals.error = req.flash("error");
+    res.locals.success = req.flash("success");
+    next();
+});
+
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 app.get("/", function(req, res){
    res.render("login"); 
