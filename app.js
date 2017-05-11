@@ -5,9 +5,13 @@ var express = require("express"),
     passport = require("passport"),
     LocalStrategy = require("passport-local"),
     passportLocalMongoose = require("passport-local-mongoose"),
-    methodOverride = require("method-override");
+    methodOverride = require("method-override"),
+    flash = require("connect-flash");
     
-var User = require("./models/user");
+var User = require("./models/user"),
+    Sport = require("./models/sport");
+    
+mongoose.connect("mongodb://localhost/yelp_camp");
     
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended:true}));
@@ -23,8 +27,8 @@ app.use(methodOverride("_method"));
 
 app.use(function(req, res, next){
     res.locals.currentUser = req.user;
-    res.locals.error = req.flash("error");
-    res.locals.success = req.flash("success");
+    //res.locals.error = req.flash("error");
+    //res.locals.success = req.flash("success");
     next();
 });
 
@@ -44,6 +48,16 @@ app.get("/home", function(req, res){
 
 app.get("/sports", function(req, res) {
     res.render("sports/index");
+});
+
+app.post("/sports", function(req, res){
+    Sport.create(req.body.sport, function(err, createdSport){
+        if(err){
+            console.log(err);
+        }else{
+            res.redirect("/sports");
+        }
+    });
 });
 
 app.get("/sports/new", function(req, res) {
