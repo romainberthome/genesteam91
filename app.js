@@ -6,13 +6,23 @@ var express = require("express"),
     LocalStrategy = require("passport-local"),
     passportLocalMongoose = require("passport-local-mongoose"),
     methodOverride = require("method-override"),
+    middleware = require("./middleware"),
+    request = require("request"),
     flash = require("connect-flash");
     
 var User = require("./models/user"),
-    Sport = require("./models/sport");
+    Sport = require("./models/sport"),
+    Comment = require("./models/comment"),
+    Event = require("./models/event");
     
-mongoose.connect("mongodb://localhost/yelp_camp");
+var sportRoutes = require("./routes/sport"),
+    commentRoutes = require("./routes/comment"),
+    eventRoutes = require("./routes/event"),
+    indexRoutes = require("./routes/index");
     
+mongoose.connect("mongodb://localhost/gesnesteam");
+
+app.use(express.static(__dirname + "/public"));    
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(require("express-session")({
@@ -20,58 +30,23 @@ app.use(require("express-session")({
     resave: false,
     saveUninitialized: false
 }));
+app.use(methodOverride("_method"));
 
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(methodOverride("_method"));
-
-app.use(function(req, res, next){
-    res.locals.currentUser = req.user;
-    //res.locals.error = req.flash("error");
-    //res.locals.success = req.flash("success");
-    next();
-});
-
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-app.get("/", function(req, res){
-   res.render("login"); 
+app.use(function(req, res, next){
+    res.locals.currentUser = req.user;
+    next();
 });
 
-app.get("/home", function(req, res){
-    res.render("home");
-});
-
-// Sport routes
-
-app.get("/sports", function(req, res) {
-    res.render("sports/index");
-});
-
-app.post("/sports", function(req, res){
-    Sport.create(req.body.sport, function(err, createdSport){
-        if(err){
-            console.log(err);
-        }else{
-            res.redirect("/sports");
-        }
-    });
-});
-
-app.get("/sports/new", function(req, res) {
-    res.render("sports/new");
-});
-
-app.get("/sports/:id", function(req, res) {
-    res.render("sports/show");
-});
-
-app.get("sport/:id/edit", function(req, res) {
-    res.render("sport/edit");
-});
-
+app.use("/",indexRoutes);
+app.use("/",sportRoutes);
+app.use("/",commentRoutes);
+app.use("/",eventRoutes);
 
 app.listen(process.env.PORT, process.env.IP, function(){
     console.log("Server Started");

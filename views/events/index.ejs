@@ -1,0 +1,40 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <div class="jumbotron">
+        <h1>Events</h1>
+        <p>Discover on this page all the information about our events</p>
+        <a class="btn btn-primary btn-md" href="/events/new">Create a new event</a>
+    </div>
+    
+    <div class="row">
+        <% events.forEach(function(events){%>
+        <div class="col-sm-12 col-lg-10 col-lg-push-1">
+            <div class="step">
+                <div class"row">
+                    <div class="row__parallel-sm row__parallel-md row__parallel-lg">
+                        <div class="col-sm-5 col-sm-push-7 col-md-4 col-md-push-8">
+                            <img src="<%= events.image %>">
+                        </div>
+                        <div class="col-sm-7 col-sm-pull-5 col-md-8 col-md-pull-4">
+                            <h3><%= events.title %></h3>
+                            <p>...</p>
+                            <p><a href="events/<%= events.id %>" class="btn btn-primary" role="button">Button</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="thumbnail">
+                <img src="<%= events.image %>">
+                <div class="caption">
+                    <h3><%= events.title %></h3>
+                    <p>...</p>
+                    <p><a href="events/<%= events.id %>" class="btn btn-primary" role="button">Button</a></p>
+                </div>
+            </div>
+        </div>
+        <% }) %>
+    </div>
+</div>
+
+<% include ../partials/footer %>

@@ -7,19 +7,32 @@
         <div style="width:30%; margin: 25px auto;">
             <form action="/sports" method="POST">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="title" name="sport[title]">
+                    <input type="text" class="form-control" placeholder="title" name="title">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="image" name="sport[image]">
+                    <input type="text" class="form-control" placeholder="image" name="image">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="edition" name="sport[edition]">
+                    <input type="text" class="form-control" placeholder="edition" name="edition">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="etape" name="sport[etape]">
+                    <input type="text" class="form-control" placeholder="etape" name="etape">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="description" name="sport[description]">
+                    <input type="text" class="form-control" placeholder="description" name="description">
+                </div>
+                <label>Classement</label>
+                <div class="form-group">
+                    <div class="input-group">
+                    <span class="input-group-addon" id="sizing-addon2">1</span>
+                    <input type="text" class="form-control" placeholder="Premier" name="classement[premier]">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                    <span class="input-group-addon" id="sizing-addon2">2</span>
+                    <input type="text" class="form-control" placeholder="Deuxieme" name="classement[deuxieme]">
+                    </div>
                 </div>
                 <div class="form-group">
                     <button class="btn btn-large btn-primary btn-block">Submit</button>

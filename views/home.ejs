@@ -1,5 +1,44 @@
 <% include ./partials/header %>
 
+<div id="landing-header">
+    <h1>Welcome to Genesteam 91!</h1>
+</div>
 
+<div class="container fh--container">
+    <div class="row">
+        <ul class="slideshow">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>LES EVENEMENTS</h2>
+            <p>Dans cette rubrique découvrez tous les derniers évènements de la Genesteam, incluant article, photos et vidéos</p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>LES MEMBRES</h2>
+        </div>
+        <% user.forEach(function(user){ %>
+        <div class="col-xs-6 col-md-3">
+            <div class="thumbnail">
+                <img>
+                <h4><%= user.username %></h4>
+            </div>
+        </div>
+        <% }) %>
+    </div>
+</div>
 
 <% include ./partials/footer %>

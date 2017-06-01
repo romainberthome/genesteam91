@@ -8,17 +8,18 @@
     </div>
     
     <div class="row">
-        <div class="col-sm-6 col-md-4">
+        <% sports.forEach(function(sports){%>
+        <div class="col-xs-6 col-md-3">
             <div class="thumbnail">
-                <img src="..." alt="...">
+                <img src="<%= sports.image %>">
                 <div class="caption">
-                    <h3>Thumbnail label</h3>
-                    <p>...</p>
-                    <p><a href="#" class="btn btn-primary" role="button">Button</a> 
-                    <a href="#" class="btn btn-default" role="button">Button</a></p>
+                    <h3><%= sports.title %></h3>
+                    <p><%= sports.description.substr(0, 100) %></p>
+                    <p class="text--center"><a href="sports/<%= sports.id %>" class="btn btn-primary" role="button">Découvrir</a></p>
                 </div>
             </div>
         </div>
+        <% }) %>
     </div>
 </div>
 
