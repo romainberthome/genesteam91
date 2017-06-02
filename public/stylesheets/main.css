@@ -98,3 +98,21 @@ body {
 .no-cssanimations .slideshow li {
 	opacity: 1;
 }
+
+.profil--element{
+  display: inline-block;
+}
+
+.profil--image{
+  border-radius: 50%;
+}
+
+.home--profil--center{
+  text-align: center;
+}
+
+.home--profil--image{
+  width: 70%;
+  margin: auto;
+  border-radius: 50%;
+}

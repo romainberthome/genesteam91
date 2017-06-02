@@ -45,7 +45,7 @@ router.get("/home", middleware.isLoggedIn, function(req, res){
         if(err){
             console.log(err);
         }else{
-            res.render("home", {user: foundUsers});
+            res.render("home", {users: foundUsers});
         }
     });
 });

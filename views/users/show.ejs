@@ -1,0 +1,17 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <img class="img-responsive profil--image" src="<%= users.image%>"></img>
+        </div>
+        <div class="col-md-8">
+            <h3><%= users.username %></h3>
+            <i class="glyphicon glyphicon-lock"></i> <p class="profil--element"><%= users.company %></p> </br>
+            <i class="glyphicon glyphicon-map-marker"></i> <p class="profil--element"><%= users.location %></p> </br>
+            <a class="btn btn-md btn-primary" href="/profil/<%= users._id %>/edit">Edit</a>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer %>

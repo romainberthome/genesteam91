@@ -30,11 +30,13 @@
         <div class="col-sm-12">
             <h2>LES MEMBRES</h2>
         </div>
-        <% user.forEach(function(user){ %>
+        <% users.forEach(function(users){ %>
         <div class="col-xs-6 col-md-3">
-            <div class="thumbnail">
-                <img>
-                <h4><%= user.username %></h4>
+            <div class="home--profil--center">
+                <img class="img-responsive home--profil--image" src="<%= users.image %>"></img>
+                <h3><%= users.username %></h3>
+                <i class="glyphicon glyphicon-lock"></i> <p class="profil--element"><%= users.company %></p></br>
+                <i class="glyphicon glyphicon-map-marker"></i> <p class="profil--element"><%= users.location %></p>
             </div>
         </div>
         <% }) %>

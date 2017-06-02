@@ -5,7 +5,8 @@
         <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/stylesheets/main.css"> 
+        <link rel="stylesheet" href="/stylesheets/main.css">
+        <meta name="viewport" content="width=device-width">
     </head>
     <body>
         <nav class="navbar navbar-default navbar-fixed-top">
@@ -30,7 +31,7 @@
                           <li><a href="/login">Login</a></li>
                           <li><a href="/register">Sign up</a></li>
                           <% } else{ %>
-                          <li><a>Sign in as <%= currentUser.username  %></a></li>
+                          <li><a href="/profil/<%= currentUser.id %>">Sign in as <%= currentUser.username  %></a></li>
                           <li><a href="/logout">Log out</a></li>
                           <% } %>
               </ul>

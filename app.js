@@ -18,7 +18,8 @@ var User = require("./models/user"),
 var sportRoutes = require("./routes/sport"),
     commentRoutes = require("./routes/comment"),
     eventRoutes = require("./routes/event"),
-    indexRoutes = require("./routes/index");
+    indexRoutes = require("./routes/index"),
+    userRoutes = require("./routes/user");
     
 mongoose.connect("mongodb://localhost/gesnesteam");
 
@@ -47,6 +48,7 @@ app.use("/",indexRoutes);
 app.use("/",sportRoutes);
 app.use("/",commentRoutes);
 app.use("/",eventRoutes);
+app.use("/",userRoutes);
 
 app.listen(process.env.PORT, process.env.IP, function(){
     console.log("Server Started");

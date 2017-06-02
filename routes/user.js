@@ -32,3 +32,5 @@ router.put("/profil/:id", function(req, res){
        }
    }); 
 });
+
+module.exports = router;
