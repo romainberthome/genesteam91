@@ -43,7 +43,7 @@ router.get("/sports/:id", middleware.isLoggedIn, function(req, res) {
         if(err){
             console.log(err);
         }else{
-    res.render("sports/show", {sports:foundSport});
+            res.render("sports/show", {sports:foundSport});
         }
     })
 });
