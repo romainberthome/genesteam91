@@ -57,4 +57,5 @@ router.get("/home", middleware.isLoggedIn, function(req, res){
     });
 });
 
+
 module.exports = router;
