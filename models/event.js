@@ -4,6 +4,7 @@ var eventSchema = new mongoose.Schema({
     title: String,
     image: String,
     video: String,
+    description: String,
     author:{
         id:{
             type: mongoose.Schema.Types.ObjectId,

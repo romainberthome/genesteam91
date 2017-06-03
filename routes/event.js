@@ -43,7 +43,37 @@ router.get("/events/:id", middleware.isLoggedIn, function(req, res) {
         }else{
             res.render("events/show", {events:foundEvent});
         }
-    })
+    });
+});
+
+router.get("/events/:id/edit", middleware.checkEventsOwnership, function(req, res){
+    Event.findById(req.params.id, function(err, foundEvent){
+        if(err){
+            console.log(err);
+        }else{
+            res.render("events/edit", {events:foundEvent});
+        }
+    });
+});
+
+router.put("/events/:id", middleware.checkEventsOwnership, function(req, res){
+    Event.findByIdAndUpdate(req.params.id, req.body.event, function(err, updatedEvent){
+        if(err){
+            console.log(err);
+        }else{
+            res.redirect("/events/" + req.params.id);
+        }
+    });
+});
+
+router.delete("/events/:id", middleware.checkEventsOwnership, function(req, res){
+    Event.findByIdAndRemove(req.params.id, function(err, removedEvent){
+        if(err){
+            console.log(err);
+        }else{
+            res.redirect("/events");
+        }
+    });
 });
     
 module.exports = router;

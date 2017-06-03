@@ -2,7 +2,8 @@ var express = require("express"),
     router = express.Router(),
     User = require("../models/user"),
     middleware = require("../middleware"),
-    passport = require("passport");
+    passport = require("passport"),
+    Event = require("../models/event");
     
 router.get("/", function(req, res) {
     res.render("landing");
@@ -45,7 +46,13 @@ router.get("/home", middleware.isLoggedIn, function(req, res){
         if(err){
             console.log(err);
         }else{
-            res.render("home", {users: foundUsers});
+            Event.find({}, function(err, foundEvents){
+                if(err){
+                    console.log(err);
+                }else{
+                    res.render("home", {users: foundUsers, events:foundEvents});
+                }
+            });
         }
     });
 });

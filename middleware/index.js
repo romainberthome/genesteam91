@@ -1,5 +1,6 @@
 var Sport = require("../models/sport"),
-    Comment = require("../models/comment");
+    Comment = require("../models/comment"),
+    Event = require("../models/event");
 var middlewareObj ={};
 
 middlewareObj.checkSportsOwnership = function(req, res, next){
@@ -10,6 +11,25 @@ middlewareObj.checkSportsOwnership = function(req, res, next){
                 res.redirect("back");
             }else{
                 if(foundSport.author.id.equals(req.user._id)){
+                    next();
+                }else{
+                    res.redirect("back");
+                }
+            }
+        });
+    }else{
+        res.redirect("back");
+    }
+}
+
+middlewareObj.checkEventsOwnership = function(req, res, next){
+    if(req.isAuthenticated()){
+        Event.findById(req.params.id, function(err, foundEvent){
+            if(err){
+                console.log(err);
+                res.redirect("back");
+            }else{
+                if(foundEvent.author.id.equals(req.user._id)){
                     next();
                 }else{
                     res.redirect("back");
