@@ -16,13 +16,17 @@ router.get("/events", middleware.isLoggedIn, function(req, res) {
 router.post("/events", middleware.isLoggedIn, function(req, res){
     var title = req.body.title;
     var image = req.body.image;
+    var image2 = req.body.image2;
+    var image3 = req.body.image3;
+    var image4 = req.body.image4;
+    var image5 = req.body.image5;
     var video = req.body.video;
     var description = req.body.description;
     var author = {
         id: req.user._id,
         username: req.user.username
     };
-    var newEvent = {title: title, image: image, video: video, description: description, author: author};
+    var newEvent = {title: title, image: image, image2: image2, image3: image3, image4: image4, image5: image5, video: video, description: description, author: author};
     Event.create(newEvent, function(err, createdEvent){
         if(err){
             console.log(err);
