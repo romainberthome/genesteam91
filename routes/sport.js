@@ -43,9 +43,15 @@ router.get("/sports/:id", middleware.isLoggedIn, function(req, res) {
         if(err){
             console.log(err);
         }else{
-            res.render("sports/show", {sports:foundSport});
+            Sport.find({}, function(err, allSports){
+                if(err){
+                    console.log(err);
+                }else{
+                    res.render("sports/show", {sports:foundSport, allsports:allSports});
+                }
+            });
         }
-    })
+    });
 });
 
 router.get("/sports/:id/edit", middleware.checkSportsOwnership, function(req, res) {

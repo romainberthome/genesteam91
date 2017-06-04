@@ -41,7 +41,13 @@ router.get("/events/:id", middleware.isLoggedIn, function(req, res) {
         if(err){
             console.log(err);
         }else{
-            res.render("events/show", {events:foundEvent});
+            Event.find({}, function(err, allEvent){
+                if(err){
+                    console.log(err);
+                }else{
+                    res.render("events/show", {events:foundEvent, allevents:allEvent});
+                }
+            });
         }
     });
 });

@@ -6,9 +6,9 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Autres étapes</div>
                 <div class="list-group">
-                    <li class="list-group-item active">Etape 1</li>
-                    <li class="list-group-item">Etape 2</li>
-                    <li class="list-group-item">Etape 3</li>
+                    <% allsports.forEach(function(allsports){%>
+                    <li class="list-group-item"><a href="<%= allsports.id %>"><%= allsports.title %></a></li>
+                    <% }) %>
                 </div>
             </div>
             <div class="panel panel-default">

@@ -2,21 +2,27 @@
 
 <div class="container">
     <div class="row">
+        <h2 class=text--center>Modifier <%= sports.title %></h2>
         <div style="width:30%; margin: 25px auto;">
             <form action="/sports/<%= sports._id %>?_method=PUT" method="POST">
                 <div class="form-group">
+                    <label>Titre</label>
                     <input type="text" class="form-control" value="<%= sports.title %>" name="sport[title]">
                 </div>
                 <div class="form-group">
+                    <label>Image</label>
                     <input type="text" class="form-control" value="<%= sports.image %>" name="sport[image]">
                 </div>
                 <div class="form-group">
+                    <label>Année</label>
                     <input type="text" class="form-control" value="<%= sports.edition %>" name="sport[edition]">
                 </div>
                 <div class="form-group">
+                    <label>Etape</label>
                     <input type="text" class="form-control" value="<%= sports.etape %>" name="sport[etape]">
                 </div>
                 <div class="form-group">
+                    <label>Description</label>
                     <input type="text" class="form-control" value="<%= sports.description %>" name="sport[description]">
                 </div>
                 <div class="form-group">
