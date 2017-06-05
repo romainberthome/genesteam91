@@ -21,7 +21,7 @@ var sportRoutes = require("./routes/sport"),
     indexRoutes = require("./routes/index"),
     userRoutes = require("./routes/user");
 
-var url = process.env.DATABASEURL || "mongodb://localhost/gesnesteam";
+var url = process.env.DATABASEURL || "mongodb://localhost/gesnesteam" ; 
 mongoose.connect(url);
 
 app.use(express.static(__dirname + "/public"));    
