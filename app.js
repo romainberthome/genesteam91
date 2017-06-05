@@ -20,8 +20,9 @@ var sportRoutes = require("./routes/sport"),
     eventRoutes = require("./routes/event"),
     indexRoutes = require("./routes/index"),
     userRoutes = require("./routes/user");
-    
-mongoose.connect("mongodb://localhost/gesnesteam");
+
+var url = process.env.DATABASEURL || "mongodb://localhost/gesnesteam";
+mongoose.connect(url);
 
 app.use(express.static(__dirname + "/public"));    
 app.set("view engine", "ejs");
