@@ -58,7 +58,7 @@ body {
 }
 
 .slideshow li:nth-child(1) { 
-  background-image: url(http://i.imgur.com/K3mPv14.jpg) 
+  background-image: url(https://s3.us-east-2.amazonaws.com/image-genesteam91/homepage-image/gt-2016.jpg) 
 }
 .slideshow li:nth-child(2) { 
   background-image: url(http://i.imgur.com/SBEmFpv.jpg);
