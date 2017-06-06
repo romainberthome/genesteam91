@@ -14,7 +14,10 @@ router.get("/register", function(req, res){
 });
 
 router.post("/register", function(req, res){
-    var  newUser = new User({username: req.body.username});
+    var image = req.body.image;
+    var location = req.body.location;
+    var company = req.body.company;
+    var  newUser = new User({username: req.body.username, image: image, location: location, company: company});
     User.register(newUser, req.body.password, function(err, user){
         if(err){
             return res.redirect("/register");
