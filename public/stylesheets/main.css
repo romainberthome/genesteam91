@@ -58,14 +58,14 @@ body {
 }
 
 .slideshow li:nth-child(1) { 
-  background-image: url(https://s3.us-east-2.amazonaws.com/image-genesteam91/homepage-image/gt-2016.jpg) 
+  background-image: url(https://s3.us-east-2.amazonaws.com/image-genesteam91/homepage-image/mariage-tc.jpg) 
 }
 .slideshow li:nth-child(2) { 
-  background-image: url(http://i.imgur.com/SBEmFpv.jpg);
+  background-image: url(https://s3.us-east-2.amazonaws.com/image-genesteam91/homepage-image/gt-2016.jpg);
   animation-delay: 10s; 
 }
 .slideshow li:nth-child(3) { 
-  background-image: url(http://i.imgur.com/emvhOnb.jpg);
+  background-image: url(https://s3.us-east-2.amazonaws.com/image-genesteam91/homepage-image/207456_10150468466640077_3587778_n.jpg);
   animation-delay: 20s; 
 }
 .slideshow li:nth-child(4) { 

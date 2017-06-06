@@ -42,7 +42,7 @@
                 <img class="img-responsive" src="<%= sports.image%>"></img>
                 <div class="caption-full">
                     <h4><a><%= sports.title %></a></h4>
-                    <p><%= sports.description%></p>
+                    <p><%- sports.description %></p>
                     <% if(currentUser && sports.author.id.equals(currentUser._id)){%>
                     <a class="btn btn-warning" href="/sports/<%= sports._id %>/edit">Editer</a>
                     <form id="delete-form" action="/sports/<%= sports._id %>?_method=DELETE" method="POST">

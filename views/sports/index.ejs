@@ -14,7 +14,7 @@
                 <img src="<%= sports.image %>">
                 <div class="caption">
                     <h3><%= sports.title %></h3>
-                    <p><%= sports.description.substr(0, 100) %></p>
+                    <p><%- sports.description.substr(0, 100) %></p>
                     <p class="text--center"><a href="sports/<%= sports.id %>" class="btn btn-primary" role="button">Découvrir</a></p>
                 </div>
             </div>

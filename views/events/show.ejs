@@ -17,7 +17,7 @@
                 <img class="img-responsive" src="<%= events.image %>"></img>
                 <div class="caption-full">
                     <h4><a><%= events.title %></a></h4>
-                    <p><%= events.description%></p>
+                    <p><%- events.description%></p>
                     <% if(currentUser && events.author.id.equals(currentUser._id)){%>
                     <a class="btn btn-warning" href="/events/<%= events._id %>/edit">Editer</a>
                     <form id="delete-form" action="/events/<%= events._id %>?_method=DELETE" method="POST">
