@@ -69,7 +69,7 @@ body {
   animation-delay: 20s; 
 }
 .slideshow li:nth-child(4) { 
-  background-image: url(http://i.imgur.com/2LSMCmJ.jpg);
+  background-image: url(https://s3.us-east-2.amazonaws.com/image-genesteam91/homepage-image/08.jpg);
   animation-delay: 30s; 
 }
 .slideshow li:nth-child(5) { 

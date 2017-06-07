@@ -30,7 +30,7 @@
                 <div class="caption">
                     <a href="#">
                     <h3><%= events.title %></h3>
-                    <p><%= events.description %></p>
+                    <p><%- events.description.substr(0, 100) %> ...</p>
                     </a>
                 </div>
             </div>
