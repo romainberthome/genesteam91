@@ -65,7 +65,14 @@ router.get("/sports/:id/edit", middleware.checkSportsOwnership, function(req, re
 });
 
 router.put("/sports/:id", middleware.checkSportsOwnership, function(req, res){
-    Sport.findByIdAndUpdate(req.params.id, req.body.sport, function(err, updatedSport){
+    var title = req.body.title;
+    var image = req.body.image;
+    var edition = req.body.edition;
+    var etape = req.body.etape;
+    var description = req.body.description;
+    var classement = req.body.classement;
+    var sportUpdate = {title: title, image: image, edition: edition, etape: etape, description: description, classement: classement};
+    Sport.findByIdAndUpdate(req.params.id, sportUpdate, function(err, updatedSport){
         if(err){
             console.log(err);
         }else{

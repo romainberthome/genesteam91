@@ -21,18 +21,54 @@
                     <th>Coureur</th>
                     <th>Points</th>
                 </tr>
-                <% for(var i= 0; i < 2; i ++){%>
-                <% var k = 1; %>
-                <% var r = ['premier', 'deuxieme']; %>
-                <% var y = 2; %>
-                <tr>
-                    <td><%= k %></td>
-                    <td><%= sports.classement.premier %></td>
-                    <td><%= y %></td>
-                </tr>
-                <% k = k+1; %>
-                <% y = y-1; %>
-                
+                <% if(sports.classement.premier){%>
+                    <tr>
+                        <td>1</td>
+                        <td><%= sports.classement.premier %></td>
+                        <td>8</td>
+                    </tr>
+                <% } %>
+                <% if(sports.classement.deuxieme){%>
+                    <tr>
+                        <td>2</td>
+                        <td><%= sports.classement.deuxieme %></td>
+                        <td>6</td>
+                    </tr>
+                <% } %>
+                <% if(sports.classement.troisieme){%>
+                    <tr>
+                        <td>3</td>
+                        <td><%= sports.classement.troisieme %></td>
+                        <td>5</td>
+                    </tr>
+                <% } %>
+                <% if(sports.classement.quatrieme){%>
+                    <tr>
+                        <td>4</td>
+                        <td><%= sports.classement.quatrieme %></td>
+                        <td>4</td>
+                    </tr>
+                <% } %>
+                <% if(sports.classement.cinquieme){%>
+                    <tr>
+                        <td>5</td>
+                        <td><%= sports.classement.cinquieme %></td>
+                        <td>3</td>
+                    </tr>
+                <% } %>
+                <% if(sports.classement.sixieme){%>
+                    <tr>
+                        <td>6</td>
+                        <td><%= sports.classement.sixieme %></td>
+                        <td>2</td>
+                    </tr>
+                <% } %>
+                <% if(sports.classement.septieme){%>
+                    <tr>
+                        <td>7</td>
+                        <td><%= sports.classement.septieme %></td>
+                        <td>1</td>
+                    </tr>
                 <% } %>
                 </table>
             </div>

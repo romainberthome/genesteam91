@@ -8,7 +8,12 @@ var sportSchema = new mongoose.Schema({
     description: String,
     classement:{
         premier: String,
-        deuxieme: String
+        deuxieme: String,
+        troisieme: String,
+        quatrieme: String,
+        cinquieme: String,
+        sixieme: String,
+        septieme: String
     },
     author:{
         id:{
