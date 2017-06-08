@@ -26,7 +26,7 @@
         <div class="row">
             <% events.forEach(function(events){ %>
             <div class="col-lg-4">
-                <img src="<%= events.image %>">
+                <div class="home--event--image" style="background:url(<%= events.image %>)">
                 <div class="caption">
                     <a href="#">
                     <h3><%= events.title %></h3>

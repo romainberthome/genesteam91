@@ -152,3 +152,8 @@ body {
   height: 100%;
 }
 
+.home--event--image{
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
