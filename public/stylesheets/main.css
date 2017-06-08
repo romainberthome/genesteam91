@@ -154,6 +154,14 @@ body {
 
 .home--event--image{
   width: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
+  height: 100%;
+}
+
+.home--event{
+  height: 400px;
+  margin-bottom: 50px;
+}
+
+.home--caption{
+  padding-top: 30px;
 }

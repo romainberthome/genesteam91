@@ -25,13 +25,14 @@
         </div>
         <div class="row">
             <% events.forEach(function(events){ %>
-            <div class="col-lg-4">
-                <div class="home--event--image" style="background:url(<%= events.image %>)">
-                <div class="caption">
+            <div class="col-lg-4 home--event">
+                <div class="home--event--image" style="background:url(<%= events.image %>);background-repeat: no-repeat;background-position: center;display: block;background-size: cover;">
+                <div class="caption home--caption">
                     <a href="#">
-                    <h3><%= events.title %></h3>
-                    <p><%- events.description.substr(0, 100) %> ...</p>
+                    <h3 class="text--center"><%= events.title %></h3>
+                    <p class="text--center"><%- events.description.substr(0, 200) %> ...</p>
                     </a>
+                </div>
                 </div>
             </div>
             <% }) %>
