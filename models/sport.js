@@ -6,6 +6,7 @@ var sportSchema = new mongoose.Schema({
     edition: String,
     etape: String,
     description: String,
+    video: String,
     classement:{
         premier: String,
         deuxieme: String,

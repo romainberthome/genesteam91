@@ -164,4 +164,16 @@ body {
 
 .home--caption{
   padding-top: 30px;
+  text-align: center;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.home--event--link{
+  color: #fff;
+}
+
+.home--event--link:hover{
+  color: #fff;
+  text-decoration: none;
 }

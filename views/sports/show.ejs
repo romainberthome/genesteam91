@@ -87,6 +87,13 @@
                     <% } %>
                 </div>
             </div>
+            <% if(sports.video){%>
+            <div class="thumbnail">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="<%= sports.video %>"></iframe>
+                </div>
+            </div>
+            <% } %>
             <div class="well">
                 <div class="text-right">
                     <a class="btn btn-success" href="/sports/<%= sports._id %>/comments/new">Ajouter un commentaire</a>

@@ -18,13 +18,14 @@ router.post("/sports", middleware.isLoggedIn, function(req, res){
     var image = req.body.image;
     var edition = req.body.edition;
     var etape = req.body.etape;
+    var video = req.body.video;
     var description = req.body.description;
     var classement = req.body.classement;
     var author = {
         id: req.user._id,
         username: req.user.username
     };
-    var newSport = {title: title, image: image, edition: edition, etape: etape, description: description, classement: classement, author: author};
+    var newSport = {title: title, image: image, edition: edition, etape: etape, video: video, description: description, classement: classement, author: author};
     Sport.create(newSport, function(err, createdSport){
         if(err){
             console.log(err);
@@ -69,9 +70,10 @@ router.put("/sports/:id", middleware.checkSportsOwnership, function(req, res){
     var image = req.body.image;
     var edition = req.body.edition;
     var etape = req.body.etape;
+    var video = req.body.video;
     var description = req.body.description;
     var classement = req.body.classement;
-    var sportUpdate = {title: title, image: image, edition: edition, etape: etape, description: description, classement: classement};
+    var sportUpdate = {title: title, image: image, edition: edition, etape: etape, video: video, description: description, classement: classement};
     Sport.findByIdAndUpdate(req.params.id, sportUpdate, function(err, updatedSport){
         if(err){
             console.log(err);
