@@ -1,6 +1,6 @@
 <% include ../partials/header %>
 
-<div class="container">
+<div class="container landing--conexion">
     <div class="row">
         <div style="width:30%; margin: 25px auto;">
             <form action="/sports/<%= sports_id %>/comments/<%= comment._id %>?_method=PUT" method="POST">
@@ -8,7 +8,7 @@
                     <input type="text" class="form-control" value="<%= comment.text %>" name="comment[text]">
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-large btn-primary btn-block">Submit</button>
+                    <button class="btn btn-large btn-primary btn-block">Envoyer</button>
                 </div>
             </form>
         </div>

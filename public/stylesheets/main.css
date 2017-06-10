@@ -1,6 +1,7 @@
 body { 
     padding-top: 70px;
     font-family: "Open Sans";
+    background-color: #f6f6f6;
 }
 
 .thumbnail{
@@ -73,7 +74,7 @@ body {
   animation-delay: 30s; 
 }
 .slideshow li:nth-child(5) { 
-  background-image: url(http://i.imgur.com/TVGe0Ef.jpg);
+  background-image: url(https://s3.us-east-2.amazonaws.com/image-genesteam91/homepage-image/pp.jpeg);
   animation-delay: 40s; 
 }
 
@@ -119,7 +120,7 @@ body {
 }
 
 .footer{
-  background-color: #2a2730;
+  background-color: #444;
   width: 100%;
   margin-top: 50px;
   padding-bottom: 40px;
@@ -127,7 +128,7 @@ body {
 }
 
 .footer--text {
-  color: #99979c;
+  color: #a3a3a3;
 }
 
 .footer--link {
@@ -176,4 +177,30 @@ body {
 .home--event--link:hover{
   color: #fff;
   text-decoration: none;
+}
+
+.btn-primary{
+  background-color: #448aff;
+  border: none;
+}
+
+.btn-primary:hover{
+  background-color: #448aff;
+  border: none;
+}
+
+.btn{
+  border-radius: 2px;
+}
+
+.thumbnail .caption{
+  padding: 15px 30px;
+}
+
+.thumbnail{
+  border: none;
+}
+
+.jumbotron{
+  background-color: #fff;
 }

@@ -34,6 +34,8 @@ app.use(require("express-session")({
 }));
 app.use(methodOverride("_method"));
 
+app.locals.moment = require('moment');
+
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
