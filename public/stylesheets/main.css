@@ -204,3 +204,8 @@ body {
 .jumbotron{
   background-color: #fff;
 }
+
+.caption h3{
+  font-size: 14px;
+}
+
