@@ -8,6 +8,7 @@ var express = require("express"),
     methodOverride = require("method-override"),
     middleware = require("./middleware"),
     request = require("request"),
+    sslRedirect = require('heroku-ssl-redirect'),
     flash = require("connect-flash");
     
 var User = require("./models/user"),
@@ -24,7 +25,8 @@ var sportRoutes = require("./routes/sport"),
 var url = process.env.DATABASEURL || "mongodb://localhost/gesnesteam" ; 
 mongoose.connect(url);
 
-app.use(express.static(__dirname + "/public"));    
+app.use(express.static(__dirname + "/public"));
+app.use(sslRedirect(['production'], 301));
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(require("express-session")({
